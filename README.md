@@ -35,3 +35,9 @@ Example:
 
 svc-js-cli init grenache-api-base bfx-util-net-js 1337 ~/bitfinex/bfx-util-js
 ```
+
+The CLI sets this repo as an origin called upstream. If you need to merge upstream run:
+
+```
+bash upstream_merge.sh
+```
