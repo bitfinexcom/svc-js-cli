@@ -12,13 +12,6 @@ class __WORKERCLASSNAME__ extends WrkApi {
     this.start()
   }
 
-  getGrcConf () {
-    const grcConf = super.getGrcConf()
-    grcConf.services = ['__SERVICE__']
-
-    return grcConf
-  }
-
   getApiConf () {
     return {
       path: '__API_PATH__'
