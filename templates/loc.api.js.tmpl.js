@@ -10,8 +10,6 @@ class __CLASSNAME__ extends Api {
   }
 
   getHelloWorld (space, name, cb) {
-    if (!_.isFunction(cb)) return cb(new Error('ERR_API_CB_INVALID'))
-
     const res = 'Hello ' + name
 
     cb(null, res)
