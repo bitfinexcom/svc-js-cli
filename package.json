@@ -1,0 +1,28 @@
+{
+  "name": "svc-js-cli",
+  "version": "1.0.0",
+  "description": "Service creation helper",
+  "main": "lib/svc-js.js",
+  "bin": "bin/svc-js-cli.js",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitfinexcom/svc-js-cli.git"
+  },
+  "author": "Robert Kowalski <robert@bitfinex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitfinexcom/svc-js-cli/issues"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "nopt": "^4.0.1",
+    "npmlog": "^4.1.2"
+  }
+}
