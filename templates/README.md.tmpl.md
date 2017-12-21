@@ -17,10 +17,6 @@ git remote add upstream __UPSTREAM__
 cp config/common.json.example config/common.json
 cp config/facs/grc.config.json.example config/facs/grc.config.json
 cp config/__CONFIG__.example config/__CONFIG__
-
-
-# Set credentials in config/__CONFIG__
-vim config/__CONFIG__
 ```
 
 
