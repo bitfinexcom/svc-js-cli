@@ -15,7 +15,7 @@ peer.init()
 
 const query = {
   action: 'getHelloWorld',
-  'args': [ 'Paolo' ]
+  args: [ 'Paolo' ]
 }
 
 peer.request('__SERVICE__', query, { timeout: 10000 }, (err, data) => {
