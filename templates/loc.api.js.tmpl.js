@@ -1,7 +1,6 @@
 'use strict'
 
 const { Api } = require('bfx-wrk-api')
-const _ = require('lodash')
 
 class __CLASSNAME__ extends Api {
   space (service, msg) {
@@ -9,7 +8,8 @@ class __CLASSNAME__ extends Api {
     return space
   }
 
-  getHelloWorld (space, name, cb) {
+  getHelloWorld (space, args, cb) {
+    const name = args.name
     const res = 'Hello ' + name
 
     cb(null, res)

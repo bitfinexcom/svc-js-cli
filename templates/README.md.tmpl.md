@@ -17,10 +17,6 @@ git remote add upstream __UPSTREAM__
 cp config/common.json.example config/common.json
 cp config/facs/grc.config.json.example config/facs/grc.config.json
 cp config/__CONFIG__.example config/__CONFIG__
-
-
-# Set credentials in config/__CONFIG__
-vim config/__CONFIG__
 ```
 
 
@@ -35,11 +31,18 @@ node worker.js --env=development --wtype=__WORKERNAME__ --apiPort __PORT__
 ### action: 'getHelloWorld'
 
   - `args`: &lt;Array&gt;
-    - `0`: &lt;String&gt; Name to greet
+    - `0`: &lt;Object&gt;
+      - `name`: &lt;String&gt; Name to greet
 
 **Response:**
 
   - &lt;String&gt; The Greeting
+
+**Example Payload:**
+
+```js
+args: [ { name: 'Paolo' } ]
+```
 
 **Example Response:**
 
