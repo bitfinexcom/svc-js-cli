@@ -14,7 +14,7 @@
     "url": "git+https://github.com/bitfinexcom/svc-js-cli.git"
   },
   "author": "Robert Kowalski <robert@bitfinex.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/bitfinexcom/svc-js-cli/issues"
   },
