@@ -12,12 +12,6 @@ class __WORKERCLASSNAME__ extends WrkApi {
     this.start()
   }
 
-  getApiConf () {
-    return {
-      path: '__API_PATH__'
-    }
-  }
-
   getPluginCtx (type) {
     const ctx = super.getPluginCtx(type)
 
