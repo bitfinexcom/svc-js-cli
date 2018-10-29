@@ -26,6 +26,9 @@ class __WORKERCLASSNAME__ extends WrkApi {
 
   init () {
     super.init()
+
+    // contains all args passed to worker.js - also custom ones
+    // console.log(this.ctx)
   }
 }
 
