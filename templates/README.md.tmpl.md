@@ -14,9 +14,7 @@ grape --dp 20002 --aph 40001 --bn '127.0.0.1:20001'
 git remote add upstream __UPSTREAM__
 
 # Configure service:
-cp config/common.json.example config/common.json
-cp config/facs/grc.config.json.example config/facs/grc.config.json
-cp config/__CONFIG__.example config/__CONFIG__
+bash setup-config.sh
 ```
 
 
