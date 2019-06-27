@@ -28,13 +28,14 @@ node worker.js --env=development --wtype=__WORKERNAME__ --apiPort __PORT__
 
 ### action: 'getHelloWorld'
 
-  - `args`: &lt;Array&gt;
-    - `0`: &lt;Object&gt;
-      - `name`: &lt;String&gt; Name to greet
+  - `args <Array>`
+    - `0 <Object>`
+      - `name <String>` Name to greet
+
 
 **Response:**
 
-  - &lt;String&gt; The Greeting
+  - `<String>` The Greeting
 
 **Example Payload:**
 
