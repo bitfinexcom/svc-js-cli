@@ -24,6 +24,17 @@ bash setup-config.sh
 node worker.js --env=development --wtype=__WORKERNAME__ --apiPort __PORT__
 ```
 
+### Integration test
+
+Stop any manually started workers and Grapes before testing with:
+
+```
+npx brittle test/integration.js
+```
+
+The Brittle test starts its own two Grapes and worker, checks the greeting,
+and stops them afterward.
+
 ## Grenache API
 
 ### action: 'getHelloWorld'

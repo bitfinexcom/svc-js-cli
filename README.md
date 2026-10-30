@@ -41,3 +41,18 @@ The CLI sets this repo as an origin called upstream. If you need to merge upstre
 ```
 bash upstream_merge.sh
 ```
+
+Generated services use the scoped `@bitfinex` worker and facility packages.
+Their integration test uses Brittle and runs with `npx brittle test/integration.js`;
+stop any manually started workers and Grapes first, since the test starts its own
+instances. The generator installs its dependencies through npm and preserves
+the base repository's scripts and other package settings.
+
+## Development
+
+```
+npm install
+npm test
+```
+
+This runs lint and the CLI's Brittle regression tests in `test/`.

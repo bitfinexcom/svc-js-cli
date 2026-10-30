@@ -1,53 +1,41 @@
-/* eslint-env mocha */
-
 'use strict'
 
-const assert = require('assert')
+const test = require('brittle')
 const path = require('path')
 
-const createGrapes = require('bfx-svc-test-helper/grapes')
-const createWorker = require('bfx-svc-test-helper/worker')
-const createClient = require('bfx-svc-test-helper/client')
+const createGrapes = require('@bitfinex/bfx-svc-test-helper/grapes')
+const createWorker = require('@bitfinex/bfx-svc-test-helper/worker')
+const createClient = require('@bitfinex/bfx-svc-test-helper/client')
 
-let grapes, worker, client
-describe('RPC integration', () => {
-  before(async function () {
-    this.timeout(20000)
+test('RPC integration: hello world', { timeout: 30000 }, async (t) => {
+  const grapes = createGrapes()
+  let worker = null
+  let client = null
 
-    grapes = createGrapes()
-    await grapes.start()
-
-    worker = createWorker({
-      env: 'development',
-      wtype: '__WORKERNAME__',
-      apiPort: '__PORT__',
-      serviceRoot: path.join(__dirname, '..')
-    }, grapes)
-
-    await worker.start()
-
-    client = createClient(worker)
-  })
-
-  after(async function () {
-    this.timeout(5000)
-
-    await client.stop()
-    await worker.stop()
+  t.teardown(async () => {
+    if (client) await client.stop()
+    if (worker && worker.worker) await worker.stop()
     await grapes.stop()
-  })
+  }, { force: true })
 
-  it('hello world: retrieves hello world', (done) => {
-    const query = {
-      action: 'getHelloWorld',
-      args: [ { name: 'Paolo' } ]
-    }
+  await grapes.start()
 
-    client.request(query, (err, res) => {
-      if (err) throw err
+  worker = createWorker({
+    env: 'development',
+    wtype: '__WORKERNAME__',
+    apiPort: '__PORT__',
+    serviceRoot: path.join(__dirname, '..')
+  }, grapes)
 
-      assert.strictEqual(res, 'Hello Paolo')
-      done()
-    })
-  }).timeout(7000)
+  await worker.start()
+
+  client = createClient(worker)
+
+  const query = {
+    action: 'getHelloWorld',
+    args: [{ name: 'Paolo' }]
+  }
+
+  const res = await client.request(query, { timeout: 7000 })
+  t.is(res, 'Hello Paolo')
 })

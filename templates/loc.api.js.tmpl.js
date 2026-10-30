@@ -1,6 +1,6 @@
 'use strict'
 
-const { Api } = require('bfx-wrk-api')
+const { Api } = require('@bitfinex/bfx-wrk-api')
 
 class __CLASSNAME__ extends Api {
   getHelloWorld (space, args, cb) {

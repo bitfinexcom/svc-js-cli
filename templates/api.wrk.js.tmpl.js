@@ -1,6 +1,6 @@
 'use strict'
 
-const { WrkApi } = require('bfx-wrk-api')
+const { WrkApi } = require('@bitfinex/bfx-wrk-api')
 
 class __WORKERCLASSNAME__ extends WrkApi {
   constructor (conf, ctx) {

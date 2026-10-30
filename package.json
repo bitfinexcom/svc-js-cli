@@ -4,9 +4,15 @@
   "description": "Service creation helper",
   "main": "lib/svc-js.js",
   "bin": "bin/svc-js-cli.js",
+  "files": [
+    "bin",
+    "lib",
+    "templates"
+  ],
   "private": true,
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "brittle test/*.test.js",
     "lint": "standard"
   },
   "repository": {
@@ -19,6 +25,7 @@
     "url": "https://github.com/bitfinexcom/svc-js-cli/issues"
   },
   "devDependencies": {
+    "brittle": "^3.19.1",
     "standard": "^10.0.3"
   },
   "dependencies": {
